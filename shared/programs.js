@@ -1,25 +1,25 @@
-export const COACHES = [
+export const PROGRAMS = [
     {
         id: 0,
-        name: "Katya Gorbacheva",
+        name: "Strength Foundations",
         image: require("../assets/img/katyaProfile.jpg"),
         featured: false,
-        description: "Bio of Katya"
+        description: "Strength Foundations"
     },
     {
         id: 1,
-        name:"James Juarez",
+        name:"Home Body Weight Workouts",
         image: require("../assets/img/unicorn.png"),
         featured: false,
-        description: "Bio of James"
+        description: "Home Body Weight Workouts"
     },
     {
         id: 2,
-        name:"Alexei",
+        name:"Mobility and Flexibility",
         image: require("../assets/img/git-logo.png"),
         featured: true,
-        description: "Bio of Alexei"
+        description: "Mobility and Flexibility"
     },
 ];
 
-// refer to campsites.js nucampsite
+// refer to partners.js nucampsite

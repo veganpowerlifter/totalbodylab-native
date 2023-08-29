@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { baseUrl } from '../../shared/baseUrl';
 
-export const fetchCoaches = createAsyncThunk(
-    'coaches/fetchCoaches',
+export const fetchPrograms = createAsyncThunk(
+    'programs/fetchPrograms',
     async () => {
-        const response = await fetch(baseUrl + 'coaches');
+        const response = await fetch(baseUrl + 'programs');
         if (!response.ok) {
             return Promise.reject(
                 'Unable to fetch, status: ' + response.status
@@ -15,21 +15,21 @@ export const fetchCoaches = createAsyncThunk(
     }
 );
 
-const coachesSlice = createSlice({
-    name: 'coaches',
-    initialState: { isLoading: true, errMess: null, campsitesArray: [] },
+const programsSlice = createSlice({
+    name: 'programs',
+    initialState: { isLoading: true, errMess: null, programsArray: [] },
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchCoaches.pending, (state) => {
+            .addCase(fetchPrograms.pending, (state) => {
                 state.isLoading = true;
             })
-            .addCase(fetchCoaches.fulfilled, (state, action) => {
+            .addCase(fetchPrograms.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.errMess = null;
-                state.campsitesArray = action.payload;
+                state.programsArray = action.payload;
             })
-            .addCase(fetchCoaches.rejected, (state, action) => {
+            .addCase(fetchPrograms.rejected, (state, action) => {
                 state.isLoading = false;
                 state.errMess = action.error
                     ? action.error.message
@@ -38,6 +38,7 @@ const coachesSlice = createSlice({
     }
 });
 
-export const coachesReducer = coachesSlice.reducer;
+export const programsReducer = programsSlice.reducer;
 
-// refer to campsitesSlice.js nucampsite
+// refer to partnersSlice.js nucampsite
+
