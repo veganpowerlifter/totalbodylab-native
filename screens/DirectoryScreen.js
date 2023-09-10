@@ -21,7 +21,7 @@ const DirectoryScreen = ({ navigation }) => {
 
     return (
         <FlatList
-            data={props.coaches}
+            data={props.coaches} //error here - Can't find variable: props
             renderItem={renderDirectoryItem}
             keyExtractor={(item) => item.id.toString()}
         />

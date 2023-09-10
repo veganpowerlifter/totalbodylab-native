@@ -25,15 +25,6 @@ const screenOptions = {
     headerStyle: { backgroundColor: '#5637DD' }
 };
 
-const dispatch = useDispatch(
-    useEffect(() => {
-        dispatch(fetchCoaches());
-        // dispatch(fetchPromotions());
-        dispatch(fetchPrograms());
-        // dispatch(fetchComments());
-    }, [dispatch]);
-);
-
 const HomeNavigator = () => {
     const Stack = createStackNavigator();
     return (
@@ -204,6 +195,14 @@ const CustomDrawerContent = (props) => (
 );
 
 const Main = () => {
+const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchCoaches());
+        // dispatch(fetchPromotions());
+        dispatch(fetchPrograms());
+        // dispatch(fetchComments());
+    }, [dispatch]);
+
     return (
         <View
             style={{
