@@ -31,7 +31,7 @@ const FavoritesScreen = ({ navigation }) => {
                                     text: 'Cancel',
                                     onPress: () =>
                                         console.log(
-                                            proram.name + 'Not Deleted'
+                                            program.name + 'Not Deleted'
                                         ),
                                     style: 'cancel'
                                 },

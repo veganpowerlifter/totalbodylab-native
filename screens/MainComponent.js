@@ -25,15 +25,6 @@ const screenOptions = {
     headerStyle: { backgroundColor: '#5637DD' }
 };
 
-const dispatch = useDispatch(
-    useEffect(() => {
-        dispatch(fetchCoaches());
-        // dispatch(fetchPromotions());
-        dispatch(fetchPrograms());
-        // dispatch(fetchComments());
-    }, [dispatch]);
-);
-
 const HomeNavigator = () => {
     const Stack = createStackNavigator();
     return (
@@ -139,7 +130,7 @@ const FavoritesNavigator = () => {
                 name='Favorites'
                 component={FavoritesScreen}
                 options={({ navigation }) => ({
-                    title: 'Favorite Campsites',
+                    title: 'Favorite Programs',
                     headerLeft: () => (
                         <Icon
                             name='heart'
@@ -154,6 +145,33 @@ const FavoritesNavigator = () => {
     );
 };
 
+const LoginNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Login'
+                component={LoginScreen}
+                options={({ navigation, route }) => ({
+                    headerTitle: getFocusedRouteNameFromRoute(route),
+                    headerLeft: () => (
+                        <Icon
+                            name={
+                                getFocusedRouteNameFromRoute(route) ===
+                                'Register'
+                                    ? 'user-plus'
+                                    : 'sign-in'
+                            }
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
 
 const DirectoryNavigator = () => {
     const Stack = createStackNavigator();
@@ -204,6 +222,14 @@ const CustomDrawerContent = (props) => (
 );
 
 const Main = () => {
+    const dispatch = useDispatch(
+        useEffect(() => {
+            dispatch(fetchCoaches());
+            // dispatch(fetchPromotions());
+            dispatch(fetchPrograms());
+            // dispatch(fetchComments());
+        }, [dispatch]);
+
     return (
         <View
             style={{
@@ -217,6 +243,21 @@ const Main = () => {
                 drawerStyle={{ backgroundColor: '#CEC8FF' }}
                 drawerContent={CustomDrawerContent}
             >
+                <Drawer.Screen
+                    name='Login'
+                    component={LoginNavigator}
+                    options={{
+                        drawerIcon: ({ color }) => (
+                            <Icon
+                                name='sign-in'
+                                type='font-awesome'
+                                size={24}
+                                iconStyle={{ width: 24 }}
+                                color={color}
+                            />
+                        )
+                    }}
+                />
                 <Drawer.Screen
                     name='Home'
                     component={HomeNavigator}
@@ -265,7 +306,7 @@ const Main = () => {
                         )
                     }}
                 />
-                {/* <Drawer.Screen
+                <Drawer.Screen
                     name='Favorites'
                     component={FavoritesNavigator}
                     options={{
@@ -280,7 +321,7 @@ const Main = () => {
                             />
                         )
                     }}
-                /> */}
+                />
                 <Drawer.Screen
                     name='About'
                     component={AboutNavigator}

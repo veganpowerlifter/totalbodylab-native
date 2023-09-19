@@ -27,7 +27,7 @@ const AboutScreen = () => {
             <ScrollView>
                 <Mission />
                 <Card>
-                    <Card.Title>Our Sponsers!</Card.Title>
+                    <Card.Title>Our Sponsers</Card.Title>
                     <Card.Divider />
                     <Loading />
                 </Card>
