@@ -8,7 +8,7 @@ import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigatio
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/img/logo.png';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchPrograms } from '../features/programs/programsSlice';

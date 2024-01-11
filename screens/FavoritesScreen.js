@@ -85,8 +85,7 @@ const FavoritesScreen = ({ navigation }) => {
         );
     }
     return (
-        // <Animatable.
-        <View {/*animation='fadeInRightBig' duration={2000}*/}>
+         <Animatable.View animation='fadeInRightBig' duration={2000}>
             <FlatList
                 data={programsArray.filter((program) =>
                     favorites.includes(program.id)
@@ -94,8 +93,7 @@ const FavoritesScreen = ({ navigation }) => {
                 renderItem={renderFavoriteItem}
                 keyExtractor={(item) => item.id.toString()}
             />
-        </View>
-        //</Animatable.
+     </Animatable.View>
     )
 };
 

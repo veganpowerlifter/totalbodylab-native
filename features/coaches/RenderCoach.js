@@ -2,7 +2,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import { baseUrl } from '../../shared/baseUrl';
 
-const RenderCoach = (props) => {
+const RenderCoach = (props) => { // can the file and the const or function be the same name?
     const { coach } = props;
 
     if (coach) {

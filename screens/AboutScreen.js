@@ -41,10 +41,10 @@ const AboutScreen = () => {
     const programs = useSelector((state) => state.programs); // was partners and sponsors in NuCamp
     // our partners and sponsors are 2 diff slices
     // Mission statement is placed within if, if and return separates the code to make code more readable
-    
+
     // JAMES PUT EXPLANATION HERE
 
-    if (programs.isLoading) { // if programs are loading - the mission statement will render
+        if (programs.isLoading) { // if programs are loading - the mission statement will render
         return (
             <ScrollView>
                 <Mission />
@@ -104,67 +104,67 @@ const AboutScreen = () => {
             </Animatable.View>
         </ScrollView>
     )
-};
+    
+}; // this should close at the bottom of the file? we have the "return outside of function" now, but when we put it into function - the code beneath it stays greyed out and "unutilized"
 
-if (sponsors.isLoading) {
-    return (
-        <ScrollView>
-            <SponsorMission />
-            <Card>
-                <Card.Title>Our Sponsors!</Card.Title>
-                <Card.Divider />
-                <Loading />
-            </Card>
-        </ScrollView>
-    );
-}
-    if (sponsors.errMess) {
-        return (
-            <ScrollView>
-                <Animatable.View
-                    animation='fadeInDown'
-                    duration={2000}
-                    delay={1000}
-                >
-                    <SponsorMission />
-                    <Card>
-                        <Card.Title>Our Sponsors!</Card.Title>
-                        <Card.Divider />
-                        <Text>{sponsors.errMess}</Text>
-                    </Card>
-                </Animatable.View >
-            </ScrollView>
-        );
-    }
+// if (sponsors.isLoading) {
+//     return (
+//         <ScrollView>
+//             <SponsorMission />
+//             <Card>
+//                 <Card.Title>Our Sponsors!</Card.Title>
+//                 <Card.Divider />
+//                 <Loading />
+//             </Card>
+//         </ScrollView>
+//     );
+// }
+// if (sponsors.errMess) {
+//     return (
+//         <ScrollView>
+//             <Animatable.View
+//                 animation='fadeInDown'
+//                 duration={2000}
+//                 delay={1000}
+//             >
+//                 <SponsorMission />
+//                 <Card>
+//                     <Card.Title>Our Sponsors!</Card.Title>
+//                     <Card.Divider />
+//                     <Text>{sponsors.errMess}</Text>
+//                 </Card>
+//             </Animatable.View >
+//         </ScrollView>
+//     );
+// }
 
-    return (
-        <ScrollView>
-            <Animatable.View
-                animation='fadeInDown'
-                duration={2000}
-                delay={1000}
-            >
-                <SponsorMission />
-                <Card>
-                    <Card.Title>
-                        Our Sponsors
-                    </Card.Title>
-                    <Card.Divider />
-                    {sponsors.sponsorsArray.map((sponsor) => (
-                        <ListItem key={partner.id}>
-                            <Avatar rounded source={{ uri: baseUrl + sponsor.image }} />
-                            <ListItem.Content>
-                                <ListItem.Title>{sponsors.name}</ListItem.Title>
-                                <ListItem.Subtitle>
-                                    {sponsors.description}
-                                </ListItem.Subtitle>
-                            </ListItem.Content>
-                        </ListItem>
-                    ))}
-                </Card>
-            </Animatable.View>
-        </ScrollView>
-    )
-};
-
+// return (
+//     <ScrollView>
+//         <Animatable.View
+//             animation='fadeInDown'
+//             duration={2000}
+//             delay={1000}
+//         >
+//             <SponsorMission />
+//             <Card>
+//                 <Card.Title>
+//                     Our Sponsors
+//                 </Card.Title>
+//                 <Card.Divider />
+//                 {sponsors.sponsorsArray.map((sponsor) => (
+//                     <ListItem key={partner.id}>
+//                         <Avatar rounded source={{ uri: baseUrl + sponsor.image }} />
+//                         <ListItem.Content>
+//                             <ListItem.Title>{sponsors.name}</ListItem.Title>
+//                             <ListItem.Subtitle>
+//                                 {sponsors.description}
+//                             </ListItem.Subtitle>
+//                         </ListItem.Content>
+//                     </ListItem>
+//                 ))}
+//             </Card>
+//         </Animatable.View>
+//     </ScrollView>
+// )
+                
 export default AboutScreen;

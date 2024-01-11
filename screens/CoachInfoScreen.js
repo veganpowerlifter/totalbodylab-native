@@ -1,4 +1,4 @@
-import RenderCoach from '../features/campsites/RenderCampsite';
+import RenderCoach from '../features/coaches';
 
 const CoachInfoScreen = ({ route }) => {
     const { coach } = route.params;
