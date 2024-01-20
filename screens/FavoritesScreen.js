@@ -1,11 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { View, FlatList, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Avatar, ListItem } from 'react-native-elements';
-import Loading from '../components/LoadingComponent';
+import {Loading} from '../components/LoadingComponents';
 import { baseUrl } from '../shared/baseUrl';
 // import * as Animatable from 'react-native-animatable'
 import { SwipeRow } from 'react-native-swipe-list-view';
-import { toggleFavorite } from '../features/favorites/favoritesSlice';
 
 
 const FavoritesScreen = ({ navigation }) => {

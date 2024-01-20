@@ -1,4 +1,4 @@
-import RenderCoach from '../features/coaches';
+import {RenderCoach} from '../features/coaches/RenderCoach';
 
 const CoachInfoScreen = ({ route }) => {
     const { coach } = route.params;

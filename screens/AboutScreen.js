@@ -3,7 +3,7 @@ import { Card, ListItem } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import * as Animatable from 'react-native-animatable'
 import { baseUrl } from '../shared/baseUrl';
-import Loading from '../components/LoadingComponent';
+import {Loading} from '../components/LoadingComponents';
 
 function Mission() {
     return (
@@ -23,7 +23,7 @@ function Mission() {
     );
 };
 
-function SponsorMission() {
+const SponsorMission = () => {
     return (
         <Card>
             <Card.Title>
